@@ -8,14 +8,13 @@ import org.junit.Test;
 public class StringCalculatorTest {
 	
 	@Test
-	public void addingEmptyStringResultsInZero() {
-		StringCalculator stringCalculator = new StringCalculator();
-		assertThat(stringCalculator.add(""), is(0));
+	public void addingNumbersInStringGivesExpectedResult() {
+		assertAdditionOfInputValuesIsExpectedResult("", 0);
+		assertAdditionOfInputValuesIsExpectedResult("1", 1);
 	}
-	
-	@Test
-	public void addingStringWithOneNumberGivesCorrectResult() {
+
+	private void assertAdditionOfInputValuesIsExpectedResult(String input, int result) {
 		StringCalculator stringCalculator = new StringCalculator();
-		assertThat(stringCalculator.add("1"), is(1));
+		assertThat(stringCalculator.add(input), is(result));
 	}
 }
