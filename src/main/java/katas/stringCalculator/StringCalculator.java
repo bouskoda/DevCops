@@ -3,6 +3,16 @@ package katas.stringCalculator;
 public class StringCalculator {
 
 	public int add(String numbers) {
-		return numbers.isEmpty() ? 0 : Integer.parseInt(numbers);
+		int result = 0;
+		
+		if (numbers.isEmpty()) {
+			return result;
+		}
+		
+		for (String number : numbers.split(",")) {
+			result += Integer.parseInt(number);
+		}
+		
+		return result;
 	}
 }
