@@ -12,6 +12,7 @@ public class StringCalculatorTest {
 		assertAdditionOfInputValuesIsExpectedResult("", 0);
 		assertAdditionOfInputValuesIsExpectedResult("1", 1);
 		assertAdditionOfInputValuesIsExpectedResult("2", 2);
+		assertAdditionOfInputValuesIsExpectedResult("-1", -1);
 		assertAdditionOfInputValuesIsExpectedResult("1,1", 2);
 		assertAdditionOfInputValuesIsExpectedResult("1,1,1,1", 4);
 	}
