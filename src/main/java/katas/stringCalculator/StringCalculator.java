@@ -9,7 +9,7 @@ public class StringCalculator {
 			return result;
 		}
 		
-		for (String number : numbers.split(",")) {
+		for (String number : numbers.split(",|;")) {
 			result += Integer.parseInt(number);
 		}
 		
