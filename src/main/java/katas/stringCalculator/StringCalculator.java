@@ -1,8 +1,7 @@
 package katas.stringCalculator;
 
 public class StringCalculator {
-
-	private static final String SEPARATOR = ",|;";
+	private StringSplitter splitter = new StringSplitter();
 
 	public int add(String numbers) {
 		int result = 0;
@@ -11,7 +10,7 @@ public class StringCalculator {
 			return result;
 		}
 		
-		for (String number : numbers.split(SEPARATOR)) {
+		for (String number : splitter.split(numbers)) {
 			result += Integer.parseInt(number);
 		}
 		
