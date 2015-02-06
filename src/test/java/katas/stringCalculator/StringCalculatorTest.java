@@ -37,6 +37,6 @@ public class StringCalculatorTest {
 
     @Test
     public void addingStringWithMultipleNumbersGivesCorrectResult() {
-        assertThat(stringCalculator.add("1\n2\n3\n6"), is(12));
+        assertThat(stringCalculator.add("1\n2,3\n6"), is(12));
     }
 }
