@@ -26,17 +26,17 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void addingStringWithDifferentNumberGivesCorrectResult() {
-        assertThat(stringCalculator.add("2"), is(2));
+    public void addingCommaSeparatedStringGivesCorrectResult() {
+        assertThat(stringCalculator.add("1,2"), is(3));
     }
 
     @Test
-    public void addingStringWithTwoNumbersGivesCorrectResult() {
+    public void addingNewLineSeparatedStringGivesCorrectResult() {
         assertThat(stringCalculator.add("1\n2"), is(3));
     }
 
     @Test
-    public void addingStringWithMultipleNumbersGivesCorrectResult() {
+    public void addingCommaAndNewLineSeparatedStringGivesCorrectResult() {
         assertThat(stringCalculator.add("1\n2,3\n6"), is(12));
     }
 }
