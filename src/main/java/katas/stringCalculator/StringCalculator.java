@@ -4,12 +4,13 @@ import static java.lang.Integer.parseInt;
 
 public class StringCalculator {
     public int add(String stringToAdd) {
+        int total = 0;
+
         if (stringToAdd.isEmpty()) {
-            return 0;
+            return total;
         }
 
         String[] numbers = stringToAdd.split(",");
-        int total = 0;
         for(String digit : numbers) {
             total += parseInt(digit);
         }
