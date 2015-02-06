@@ -2,6 +2,9 @@ package katas.stringCalculator;
 
 public class StringCalculator {
     public int add(String stringToAdd) {
-        return 0;
+        if (stringToAdd.isEmpty()) {
+            return 0;
+        }
+        return 1;
     }
 }

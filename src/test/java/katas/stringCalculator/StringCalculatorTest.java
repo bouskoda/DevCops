@@ -8,8 +8,14 @@ import static org.hamcrest.Matchers.is;
 public class StringCalculatorTest {
 
     @Test
-    public void emptyStringResultsInResultZero() {
+    public void emptyStringGivesResultZero() {
         StringCalculator stringCalculator = new StringCalculator();
         assertThat(stringCalculator.add(""), is(0));
+    }
+
+    @Test
+    public void addingStringWithSingleNumberGivesCorrectResult() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertThat(stringCalculator.add("1"), is(1));
     }
 }
