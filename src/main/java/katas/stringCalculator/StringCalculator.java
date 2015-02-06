@@ -4,7 +4,7 @@ import static java.lang.Integer.parseInt;
 
 public class StringCalculator {
 
-    private static final String DELIMITER = ",";
+    private static final String DELIMITER = "\n";
 
     public int add(String stringToAdd) {
         int total = 0;

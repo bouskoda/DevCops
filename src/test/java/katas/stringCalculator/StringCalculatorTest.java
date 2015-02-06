@@ -32,11 +32,11 @@ public class StringCalculatorTest {
 
     @Test
     public void addingStringWithTwoNumbersGivesCorrectResult() {
-        assertThat(stringCalculator.add("1,2"), is(3));
+        assertThat(stringCalculator.add("1\n2"), is(3));
     }
 
     @Test
     public void addingStringWithMultipleNumbersGivesCorrectResult() {
-        assertThat(stringCalculator.add("1,2,3,6"), is(12));
+        assertThat(stringCalculator.add("1\n2\n3\n6"), is(12));
     }
 }
