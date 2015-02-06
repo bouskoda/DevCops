@@ -29,4 +29,9 @@ public class StringCalculatorTest {
     public void addingStringWithDifferentNumberGivesCorrectResult() {
         assertThat(stringCalculator.add("2"), is(2));
     }
+
+    @Test
+    public void addingStringWithMultipleNumbersGivesCorrectResult() {
+        assertThat(stringCalculator.add("1,2"), is(3));
+    }
 }
