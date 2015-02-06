@@ -12,10 +12,4 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertThat(stringCalculator.add(""), is(0));
 	}
-	
-	@Test
-	public void addingStringWithOneNumberGivesCorrectResult() {
-		StringCalculator stringCalculator = new StringCalculator();
-		assertThat(stringCalculator.add("1"), is(1));
-	}
 }
