@@ -11,7 +11,6 @@ public class StringCalculatorTest {
 	public void addingNumbersInStringGivesExpectedResult() {
 		assertAdditionOfInputValuesIsExpectedResult("", 0);
 		assertAdditionOfInputValuesIsExpectedResult("1", 1);
-		assertAdditionOfInputValuesIsExpectedResult("2", 2);
 	}
 
 	private void assertAdditionOfInputValuesIsExpectedResult(String input, int result) {
