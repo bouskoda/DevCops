@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.is;
 public class StringCalculatorTest {
 
     private StringCalculator stringCalculator;
-    
+
     @Before
     public void setup() {
         stringCalculator = new StringCalculator();
@@ -23,5 +23,10 @@ public class StringCalculatorTest {
     @Test
     public void addingStringWithSingleNumberGivesCorrectResult() {
         assertThat(stringCalculator.add("1"), is(1));
+    }
+
+    @Test
+    public void addingStringWithDifferentNumberGivesCorrectResult() {
+        assertThat(stringCalculator.add("2"), is(2));
     }
 }
