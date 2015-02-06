@@ -1,10 +1,9 @@
 package katas.stringCalculator;
 
+import static java.lang.Integer.parseInt;
+
 public class StringCalculator {
     public int add(String stringToAdd) {
-        if (stringToAdd.isEmpty()) {
-            return 0;
-        }
-        return Integer.parseInt(stringToAdd);
+        return stringToAdd.isEmpty()? 0 : parseInt(stringToAdd);
     }
 }
