@@ -15,31 +15,54 @@ public class StringCalculator {
         int total = 0;
 
         if (!stringToAdd.isEmpty()) {
-            String[] numbers = stringToAdd.split(DELIMITER);
+            List<String> result = splitOnDelimiter(stringToAdd);
 
-            List<String> result = doesOptionalDelimiterExist(numbers);
-
-            if (result.size() > 1) {
-                String delimiter = result.get(0);
-                String stringToSplit = result.get(1);
-                numbers = stringToSplit.split(delimiter);
-            }
-
-            for (String digit : numbers) {
-                total += parseInt(digit);
+            for (int digit : deriveNumbersToAddFrom(result)) {
+                total += digit;
             }
         }
         return total;
     }
 
-    private List<String> doesOptionalDelimiterExist(String[] input) {
-        if (input[0].startsWith("//")) {
-            StringTokenizer tokenizer = new StringTokenizer(input[0], "/");
-            if (tokenizer.hasMoreElements()) {
-                String delimiter = tokenizer.nextElement().toString();
-                return asList(delimiter, input[1]);
-            }
+    private List<String> splitOnDelimiter(String input) {
+        if (inputContainsOptionalDelimiter(input)) {
+            return splitOnDefinedDelimiter(input);
         }
+        return asList(input);
+    }
+
+    private boolean inputContainsOptionalDelimiter(String input) {
+        return input.startsWith("//");
+    }
+
+    private List<String> splitOnDefinedDelimiter(String inputWithDefinedDelimiter) {
+        StringTokenizer tokenizer = new StringTokenizer(inputWithDefinedDelimiter, "/\n");
+
+        if (tokenizer.hasMoreElements()) {
+            String delimiter = tokenizer.nextElement().toString();
+            String stringToSplit = tokenizer.nextElement().toString();
+            return asList(delimiter, stringToSplit);
+        }
+        // should not get to this line
         return emptyList();
+    }
+
+    private int[] deriveNumbersToAddFrom(List<String> result) {
+        if (result.size() > 1) {
+            String delimiter = result.get(0);
+            String stringToSplit = result.get(1);
+            return extractAsInt(delimiter, stringToSplit);
+        }
+        return extractAsInt(DELIMITER, result.get(0));
+    }
+
+    private int[] extractAsInt(String delimiter, String stringToSplit) {
+        String[] splitStrings = stringToSplit.split(delimiter);
+        int[] numbersToAdd = new int[splitStrings.length];
+
+        for (int index = 0; index < numbersToAdd.length ; index++) {
+            numbersToAdd[index] = parseInt(splitStrings[index]);
+        }
+        return numbersToAdd;
     }
 }
