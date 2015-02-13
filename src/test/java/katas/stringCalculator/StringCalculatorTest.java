@@ -39,4 +39,10 @@ public class StringCalculatorTest {
     public void commaAndNewLineDelimitedInputAddsValuesCorrectly() {
         assertThat(stringCalculator.add("1\n2,3\n6"), is(12));
     }
+
+    // “//[delimiter]\n[numbers…]” for example “//;\n1;2” should return three where the default delimiter is ‘;’ .
+    @Test
+    public void delimiterDefinedInInputAddsValuesCorrectly() {
+        assertThat(stringCalculator.add("//:\n1:2:3"), is(6));
+    }
 }
