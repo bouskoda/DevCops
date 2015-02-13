@@ -16,27 +16,27 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void emptyStringGivesResultZero() {
+    public void emptyInputGivesResultZero() {
         assertThat(stringCalculator.add(""), is(0));
     }
 
     @Test
-    public void addingStringWithSingleNumberGivesCorrectResult() {
+    public void inputWithSingleNumberGivesExpectedResult() {
         assertThat(stringCalculator.add("1"), is(1));
     }
 
     @Test
-    public void addingCommaSeparatedStringGivesCorrectResult() {
+    public void commaDelimitedInputAddsValuesCorrectly() {
         assertThat(stringCalculator.add("1,2"), is(3));
     }
 
     @Test
-    public void addingNewLineSeparatedStringGivesCorrectResult() {
+    public void newLineDelimitedInputAddsValuesCorrectly() {
         assertThat(stringCalculator.add("1\n2"), is(3));
     }
 
     @Test
-    public void addingCommaAndNewLineSeparatedStringGivesCorrectResult() {
+    public void commaAndNewLineDelimitedInputAddsValuesCorrectly() {
         assertThat(stringCalculator.add("1\n2,3\n6"), is(12));
     }
 }
