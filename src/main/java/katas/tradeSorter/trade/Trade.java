@@ -12,22 +12,23 @@ public class Trade {
         this.version = version;
         this.currency = currency;
     }
-/*
 
-    public String getId() {
-        return id;
-    }
+    /*
 
-    public String getDomain() {
-        return domain;
-    }
+        public String getId() {
+            return id;
+        }
 
-    public int getVersion() {
-        return version;
-    }
+        public String getDomain() {
+            return domain;
+        }
 
+        public int getVersion() {
+            return version;
+        }
+
+    */
     public String getCurrency() {
         return currency;
     }
-*/
 }
