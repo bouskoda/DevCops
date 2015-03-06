@@ -22,11 +22,14 @@ public class TradeSorterTest {
 
     @Test
     public void outputSortedOnTradeCurrency() {
-        tradeList.add(new Trade("1234", "OBS", 1, "USD"));
-        tradeList.add(new Trade("1234", "OBS", 1, "GBP"));
+        Trade usdTrade = new Trade("1234", "OBS", 1, "USD");
+        Trade gbpTrade = new Trade("5432", "OBS", 1, "GBP");
+        tradeList.add(usdTrade);
+        tradeList.add(gbpTrade);
         TradeSorter tradeSorter = new TradeSorter(tradeList);
 
         List<Trade> sortedList = tradeSorter.sort();
-        assertThat(sortedList.get(0).getCurrency(), is("GBP"));
+        assertThat(sortedList.get(0), is(gbpTrade));
+        assertThat(sortedList.get(1), is(usdTrade));
     }
 }

@@ -12,32 +12,30 @@ public class TradeSorter {
         this.tradeList = tradeList;
     }
 
-    // CURRENCY ORDERING: GBP, EUR, USD
     public List<Trade> sort() {
         if (noSortingRequired()) {
             return tradeList;
         }
+        return tradesSortedOnCurrency();
+    }
 
+    // CURRENCY ORDERING: GBP, EUR, USD
+    private List<Trade> tradesSortedOnCurrency() {
         List<Trade> sortedList = new ArrayList<Trade>();
-        for (Trade trade : tradeList) {
-            if (trade.getCurrency() == "GBP") {
-                sortedList.add(trade);
-            }
-        }
 
-        for (Trade trade : tradeList) {
-            if (trade.getCurrency() == "EUR") {
-                sortedList.add(trade);
-            }
-        }
-
-        for (Trade trade : tradeList) {
-            if (trade.getCurrency() == "USD") {
-                sortedList.add(trade);
-            }
-        }
+        extractTradesForCurrency("GBP", sortedList);
+        extractTradesForCurrency("EUR", sortedList);
+        extractTradesForCurrency("USD", sortedList);
 
         return sortedList;
+    }
+
+    private void extractTradesForCurrency(String currency, List<Trade> sortedList) {
+        for (Trade trade : tradeList) {
+            if (currency.equals(trade.getCurrency())) {
+                sortedList.add(trade);
+            }
+        }
     }
 
     private boolean noSortingRequired() {
