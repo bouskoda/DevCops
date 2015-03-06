@@ -2,6 +2,7 @@ package katas.tradeSorter;
 
 import katas.tradeSorter.trade.Trade;
 
+import java.util.Collections;
 import java.util.List;
 
 public class TradeSorter {
@@ -12,6 +13,10 @@ public class TradeSorter {
     }
 
     public List<Trade> sort() {
-        return tradeList;
+        return noSortingRequired() ? tradeList : Collections.<Trade>emptyList();
+    }
+
+    private boolean noSortingRequired() {
+        return (tradeList.size() == 1);
     }
 }
