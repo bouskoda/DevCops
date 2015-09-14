@@ -8,7 +8,7 @@ public class RomanNumeralConverter {
 
     private int convertMultiplesOfNumeralI(String romanNumeral) throws InvalidInputException {
         if (romanNumeral.length() > 3) {
-            throw new InvalidInputException(String.format("Invalid input for roman numeral 1: %s", romanNumeral));
+            throw new InvalidInputException(String.format("Invalid input for roman numeral I: %s", romanNumeral));
         }
         return romanNumeral.length();
     }
