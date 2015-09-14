@@ -22,4 +22,11 @@ public class RomanNumeralConverterTest {
 
         assertThat(romanNumeralConverter.convert("II"), is(equalTo(2)));
     }
+
+    @Test
+    public void romanNumeralIIIConvertsToThree() {
+        romanNumeralConverter = new RomanNumeralConverter();
+
+        assertThat(romanNumeralConverter.convert("III"), is(equalTo(3)));
+    }
 }
