@@ -32,4 +32,8 @@ public class TradeSorterTest {
         assertThat(sortedList.get(0), is(gbpTrade));
         assertThat(sortedList.get(1), is(usdTrade));
     }
+
+    // outputSortedOnVersion_whenCurrencyTheSame
+    // outputSortedOnCurrencyThenVersion
+    // outputIsCommaSeparated
 }
