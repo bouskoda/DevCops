@@ -7,11 +7,19 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class RomanNumeralConverterTest {
+    private RomanNumeralConverter romanNumeralConverter;
 
     @Test
     public void romanNumeralIConvertsToOne() {
-        RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
+        romanNumeralConverter = new RomanNumeralConverter();
 
         assertThat(romanNumeralConverter.convert("I"), is(equalTo(1)));
+    }
+
+    @Test
+    public void romanNumeralIIConvertsToTwo() {
+        romanNumeralConverter = new RomanNumeralConverter();
+
+        assertThat(romanNumeralConverter.convert("II"), is(equalTo(2)));
     }
 }
