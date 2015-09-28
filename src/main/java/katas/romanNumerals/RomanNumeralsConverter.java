@@ -3,6 +3,10 @@ package katas.romanNumerals;
 public class RomanNumeralsConverter {
 
     public int convert(String romanNumeral) {
-        return romanNumeral.length();
+        if (romanNumeral.equals("V")) {
+            return 5;
+        } else {
+            return romanNumeral.length();
+        }
     }
 }
