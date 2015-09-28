@@ -10,22 +10,17 @@ public class RomanNumeralConverterTest {
     private RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
 
     @Test
-    public void romanNumeralIConvertsToOne() throws InvalidInputException {
+    public void romanNumeralIConvertsToOne() {
         assertThat(romanNumeralConverter.convert("I"), is(equalTo(1)));
     }
 
     @Test
-    public void romanNumeralIIConvertsToTwo() throws InvalidInputException {
+    public void romanNumeralIIConvertsToTwo() {
         assertThat(romanNumeralConverter.convert("II"), is(equalTo(2)));
     }
 
     @Test
-    public void romanNumeralIIIConvertsToThree() throws InvalidInputException {
+    public void romanNumeralIIIConvertsToThree() {
         assertThat(romanNumeralConverter.convert("III"), is(equalTo(3)));
-    }
-
-    @Test(expected = InvalidInputException.class)
-    public void incorrectFormatForRomanNumeralIIII() throws InvalidInputException {
-        romanNumeralConverter.convert("IIII");
     }
 }
