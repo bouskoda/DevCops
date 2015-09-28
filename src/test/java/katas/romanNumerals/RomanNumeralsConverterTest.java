@@ -2,7 +2,7 @@ package katas.romanNumerals;
 
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.StrictAssertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
@@ -11,21 +11,21 @@ public class RomanNumeralsConverterTest {
 
     @Test
     public void emptyStringConvertsToZero() {
-        assertThat(romanNumeralsConverter.convert(""), is(equalTo(0)));
+        assertThat(romanNumeralsConverter.convert("")).isEqualTo(0);
     }
 
     @Test
     public void romanNumeralIConvertsToOne() {
-        assertThat(romanNumeralsConverter.convert("I"), is(equalTo(1)));
+        assertThat(romanNumeralsConverter.convert("I")).isEqualTo(1);
     }
 
     @Test
     public void romanNumeralIIConvertsToTwo() {
-        assertThat(romanNumeralsConverter.convert("II"), is(equalTo(2)));
+        assertThat(romanNumeralsConverter.convert("II")).isEqualTo(2);
     }
 
     @Test
     public void romanNumeralIIIConvertsToThree() {
-        assertThat(romanNumeralsConverter.convert("III"), is(equalTo(3)));
+        assertThat(romanNumeralsConverter.convert("III")).isEqualTo(3);
     }
 }
