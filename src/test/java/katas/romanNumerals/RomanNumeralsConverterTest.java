@@ -7,16 +7,15 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class RomanNumeralsConverterTest {
+    private RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
 
     @Test
     public void emptyStringConvertsToZero() {
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertThat(romanNumeralsConverter.convert(""), is(equalTo(0)));
     }
 
     @Test
     public void romanNumeralIConvertsToOne() {
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertThat(romanNumeralsConverter.convert("I"), is(equalTo(1)));
     }
 }
