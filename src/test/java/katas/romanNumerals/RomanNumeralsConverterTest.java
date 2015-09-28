@@ -13,4 +13,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertThat(romanNumeralsConverter.convert(""), is(equalTo(0)));
     }
+
+    @Test
+    public void romanNumeralIConvertsToOne() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertThat(romanNumeralsConverter.convert("I"), is(equalTo(1)));
+    }
 }
