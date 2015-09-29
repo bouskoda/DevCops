@@ -10,6 +10,7 @@ public class RomanNumeralsConverter {
         results.put("", 0);
         results.put("I", 1);
         results.put("IV", 4);
+        results.put("V", 5);
     }
 
     public int convert(String romanNumeral) {
