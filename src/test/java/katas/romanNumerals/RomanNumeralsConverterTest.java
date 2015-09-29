@@ -24,7 +24,8 @@ public class RomanNumeralsConverterTest {
                 "VIII, 8",
                 "IX, 9",
                 "X, 10",
-                "XXX, 30"})
+                "XXX, 30",
+                "XL, 40"})
     public void romanNumeralConvertsToExpectedArabicNumber(String romanNumeral, int expectedNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedNumber);
     }
