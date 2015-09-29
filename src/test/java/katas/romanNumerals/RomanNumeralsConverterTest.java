@@ -16,7 +16,8 @@ public class RomanNumeralsConverterTest {
     @Parameters({", 0",
                 "I, 1",
                 "II, 2",
-                "III, 3"})
+                "III, 3",
+                "IV, 4"})
     public void romanNumeralConvertsToExpectedArabicNumber(String romanNumeral, int expectedNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedNumber);
     }
