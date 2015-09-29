@@ -9,12 +9,15 @@ public class RomanNumeralsConverter {
     static {
         results.put("", 0);
         results.put("I", 1);
-        results.put("II", 2);
-        results.put("III", 3);
         results.put("IV", 4);
     }
 
     public int convert(String romanNumeral) {
-        return results.get(romanNumeral);
+        if (results.containsKey(romanNumeral)) {
+            return results.get(romanNumeral);
+        }
+
+        return results.get(romanNumeral.substring(0,1))
+                + convert(romanNumeral.substring(1));
     }
 }
