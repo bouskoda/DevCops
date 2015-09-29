@@ -33,9 +33,4 @@ public class RomanNumeralsConverterTest {
     public void romanNumeralVConvertsToFive() {
         assertThat(romanNumeralsConverter.convert("V")).isEqualTo(5);
     }
-
-    @Test
-    public void romanNumeralXConvertsToTen() {
-        assertThat(romanNumeralsConverter.convert("X")).isEqualTo(10);
-    }
 }
