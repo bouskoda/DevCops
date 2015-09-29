@@ -17,6 +17,7 @@ public class RomanNumeralsConverter {
         results.put("L", 50);
         results.put("XC", 90);
         results.put("C", 100);
+        results.put("CD", 400);
     }
 
     public int convert(String romanNumeral) {
