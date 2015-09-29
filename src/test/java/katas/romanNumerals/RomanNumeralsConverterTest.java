@@ -23,9 +23,12 @@ public class RomanNumeralsConverterTest {
     public void romanNumeralIIConvertsToTwo() {
         assertThat(romanNumeralsConverter.convert("II")).isEqualTo(2);
     }
+<<<<<<< HEAD
 
     @Test
     public void romanNumeralIIIConvertsToThree() {
         assertThat(romanNumeralsConverter.convert("III")).isEqualTo(3);
     }
+=======
+>>>>>>> parent of b327c7b... RomanNumerals: adding test to confirm ability to convert III to three
 }
