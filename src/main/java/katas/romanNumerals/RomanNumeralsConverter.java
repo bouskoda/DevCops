@@ -11,6 +11,7 @@ public class RomanNumeralsConverter {
         results.put("I", 1);
         results.put("IV", 4);
         results.put("V", 5);
+        results.put("IX", 9);
     }
 
     public int convert(String romanNumeral) {
