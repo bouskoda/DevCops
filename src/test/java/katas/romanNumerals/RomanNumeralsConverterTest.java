@@ -17,4 +17,9 @@ public class RomanNumeralsConverterTest {
     public void romanNumeralIConvertsToOne() {
         assertThat(romanNumeralsConverter.convert("I")).isEqualTo(1);
     }
+
+    @Test
+    public void romanNumeralIIConvertsToTwo() {
+        assertThat(romanNumeralsConverter.convert("II")).isEqualTo(2);
+    }
 }

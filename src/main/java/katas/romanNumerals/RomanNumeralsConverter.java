@@ -9,6 +9,10 @@ public class RomanNumeralsConverter {
             result += 1;
         }
 
+        if (romanNumeral.length() >= 2) {
+            result += 1;
+        }
+
         return result;
     }
 }
