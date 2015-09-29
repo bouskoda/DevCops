@@ -2,17 +2,9 @@ package katas.romanNumerals;
 
 public class RomanNumeralsConverter {
 
+    private static int[] results = {0, 1, 2};
+
     public int convert(String romanNumeral) {
-        int result = 0;
-
-        if (romanNumeral.length() >= 1) {
-            result += 1;
-        }
-
-        if (romanNumeral.length() >= 2) {
-            result += 1;
-        }
-
-        return result;
+        return results[romanNumeral.length()];
     }
 }
