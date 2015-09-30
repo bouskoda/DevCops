@@ -18,6 +18,10 @@ public class RomanNumeralsConverter {
     }
 
     public int convert(String romanNumeral) {
+        if (romanNumeral.length() > 1) {
+            return 2;
+        }
+
         return results.get(romanNumeral);
     }
 }

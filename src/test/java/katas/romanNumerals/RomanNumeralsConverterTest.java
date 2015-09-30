@@ -9,6 +9,7 @@ import static org.assertj.core.api.StrictAssertions.assertThat;
 
 @RunWith(JUnitParamsRunner.class)
 public class RomanNumeralsConverterTest {
+    private RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
 
     @Test
     @Parameters({", 0",
@@ -20,7 +21,12 @@ public class RomanNumeralsConverterTest {
                 "D, 500",
                 "M, 1000"})
     public void romanNumeralConvertsToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
+    }
+
+    @Test
+    @Parameters({"II, 2"})
+    public void additionRomanNumeralsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
 }
