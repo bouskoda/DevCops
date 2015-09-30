@@ -1,26 +1,21 @@
 package katas.romanNumerals;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.StrictAssertions.assertThat;
 
+@RunWith(JUnitParamsRunner.class)
 public class RomanNumeralsConverterTest {
 
     @Test
-    public void emptyStringConvertsToZero() {
+    @Parameters({", 0",
+                "I, 1",
+                "V, 5"})
+    public void romanNumeralConvertsToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
-        assertThat(romanNumeralsConverter.convert("")).isEqualTo(0);
-    }
-
-    @Test
-    public void romanNumeralIConvertsToOne() {
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
-        assertThat(romanNumeralsConverter.convert("I")).isEqualTo(1);
-    }
-
-    @Test
-    public void romanNumeralVConvertsToFive() {
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
-        assertThat(romanNumeralsConverter.convert("V")).isEqualTo(5);
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
 }
