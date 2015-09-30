@@ -17,4 +17,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertThat(romanNumeralsConverter.convert("I")).isEqualTo(1);
     }
+
+    @Test
+    public void romanNumeralVConvertsToFive() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertThat(romanNumeralsConverter.convert("V")).isEqualTo(5);
+    }
 }
