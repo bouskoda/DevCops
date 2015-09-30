@@ -12,6 +12,7 @@ public class RomanNumeralsConverter {
         results.put("V", 5);
         results.put("X", 10);
         results.put("L", 50);
+        results.put("C", 100);
     }
     public int convert(String romanNumeral) {
         return results.get(romanNumeral);
