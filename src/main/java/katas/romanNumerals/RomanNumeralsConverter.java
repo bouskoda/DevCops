@@ -1,17 +1,17 @@
 package katas.romanNumerals;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanNumeralsConverter {
 
+    private static Map<String, Integer> results = new HashMap<>();
+    static {
+        results.put("", 0);
+        results.put("I", 1);
+        results.put("V", 5);
+    }
     public int convert(String romanNumeral) {
-        int result = 0;
-
-        if (romanNumeral.equals("I")) {
-            result = 1;
-        }
-
-        if (romanNumeral.equals("V")) {
-            result = 5;
-        }
-        return result;
+        return results.get(romanNumeral);
     }
 }
