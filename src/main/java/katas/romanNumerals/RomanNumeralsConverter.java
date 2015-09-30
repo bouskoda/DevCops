@@ -3,6 +3,9 @@ package katas.romanNumerals;
 public class RomanNumeralsConverter {
 
     public int convert(String romanNumeral) {
-        return 0;
+        if (romanNumeral.isEmpty()) {
+            return 0;
+        }
+        return 1;
     }
 }
