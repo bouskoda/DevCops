@@ -17,7 +17,8 @@ public class RomanNumeralsConverterTest {
                 "X, 10",
                 "L, 50",
                 "C, 100",
-                "D, 500"})
+                "D, 500",
+                "M, 1000"})
     public void romanNumeralConvertsToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
