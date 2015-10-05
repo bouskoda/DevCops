@@ -2,6 +2,8 @@ package katas.romanNumerals;
 
 import java.util.*;
 
+import static java.util.Arrays.asList;
+
 public class RomanNumeralsConverter {
 
     private static Map<String, Integer> results = new HashMap<>();
@@ -17,12 +19,10 @@ public class RomanNumeralsConverter {
     }
 
     public int convert(String romanNumeral) {
-        List<String> numerals = Arrays.asList(romanNumeral.split(""));
-        Iterator<String> numeralsIterator = numerals.iterator();
-
         int result = 0;
         int lastResult = 0;
 
+        Iterator<String> numeralsIterator = getRomanNumeralIterator(romanNumeral);
         while (numeralsIterator.hasNext()) {
             int thisResult = results.get(numeralsIterator.next());
             if (thisResult > lastResult) {
@@ -36,5 +36,10 @@ public class RomanNumeralsConverter {
         }
 
         return result;
+    }
+
+    private Iterator<String> getRomanNumeralIterator(String romanNumeral) {
+        List<String> numerals = asList(romanNumeral.split(""));
+        return numerals.iterator();
     }
 }
