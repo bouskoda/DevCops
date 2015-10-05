@@ -1,7 +1,6 @@
 package katas.romanNumerals;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class RomanNumeralsConverter {
 
@@ -18,14 +17,24 @@ public class RomanNumeralsConverter {
     }
 
     public int convert(String romanNumeral) {
-        if (romanNumeral.length() > 2) {
-            return  3;
+        List<String> numerals = Arrays.asList(romanNumeral.split(""));
+        Iterator<String> numeralsIterator = numerals.iterator();
+
+        int result = 0;
+        int lastResult = 0;
+
+        while (numeralsIterator.hasNext()) {
+            int thisResult = results.get(numeralsIterator.next());
+            if (thisResult > lastResult) {
+                result -= lastResult;
+                result += (thisResult - lastResult);
+            } else {
+                result += thisResult;
+            }
+
+            lastResult = thisResult;
         }
 
-        if (romanNumeral.length() > 1) {
-            return 2;
-        }
-
-        return results.get(romanNumeral);
+        return result;
     }
 }
