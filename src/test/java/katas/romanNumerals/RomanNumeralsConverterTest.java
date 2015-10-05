@@ -68,4 +68,12 @@ public class RomanNumeralsConverterTest {
     public void romanNumeralHundredsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
+
+    @Test
+    @Parameters({"DCCCXLVI, 846",
+                "MCMXCIX,   1999",
+                "MMVIII,    2008"})
+    public void largeRomanNumeralsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
+    }
 }
