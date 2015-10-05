@@ -31,19 +31,29 @@ public class RomanNumeralsConverterTest {
                 "VI,    6",
                 "VII,   7",
                 "VIII,  8",
-                "IX,    9",
-                "XI,    11",
+                "IX,    9"})
+    public void romanNumeralAdditionBelowTenConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
+    }
+
+    @Test
+    @Parameters({"XXI,  21",
                 "XXII,  22",
                 "XXIV,  24",
                 "XXVI,  26",
-                "XXIX,  29",
-                "XXX,  30",
-                "XL,  40",
-                "LX,  60",
-                "LXX,  70",
+                "XXIX,  29"})
+    public void romanNumeralAdditionOfTwentiesConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
+    }
+
+    @Test
+    @Parameters({"XXX,  30",
+                "XL,    40",
+                "LX,    60",
+                "LXX,   70",
                 "LXXX,  80",
-                "XC,  90"})
-    public void additionRomanNumeralsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
+                "XC,    90"})
+    public void romanNumeralMultiplesOfTenConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
 }
