@@ -25,13 +25,18 @@ public class RomanNumeralsConverterTest {
     }
 
     @Test
-    @Parameters({"II, 2",
-                "III, 3",
-                "IV, 4",
-                "VI, 6",
-                "VII, 7",
-                "VIII, 8",
-                "IX, 9"})
+    @Parameters({"II,   2",
+                "III,   3",
+                "IV,    4",
+                "VI,    6",
+                "VII,   7",
+                "VIII,  8",
+                "IX,    9",
+                "XI,    11",
+                "XXII,  22",
+                "XXIV,  24",
+                "XXVI,  26",
+                "XXIX,  29"})
     public void additionRomanNumeralsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
