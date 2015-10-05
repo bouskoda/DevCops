@@ -56,4 +56,16 @@ public class RomanNumeralsConverterTest {
     public void romanNumeralMultiplesOfTenConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
+
+    @Test
+    @Parameters({"CC,   200",
+                "CCC,   300",
+                "CD,    400",
+                "DC,    600",
+                "DCC,   700",
+                "DCCC,  800",
+                "CM,    900"})
+    public void romanNumeralHundredsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
+        assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
+    }
 }
