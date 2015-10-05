@@ -36,7 +36,13 @@ public class RomanNumeralsConverterTest {
                 "XXII,  22",
                 "XXIV,  24",
                 "XXVI,  26",
-                "XXIX,  29"})
+                "XXIX,  29",
+                "XXX,  30",
+                "XL,  40",
+                "LX,  60",
+                "LXX,  70",
+                "LXXX,  80",
+                "XC,  90"})
     public void additionRomanNumeralsConvertToExpectedArabicNumber(String romanNumeral, int expectedArabicNumber) {
         assertThat(romanNumeralsConverter.convert(romanNumeral)).isEqualTo(expectedArabicNumber);
     }
